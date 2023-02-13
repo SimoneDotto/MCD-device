@@ -1,0 +1,812 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle ise -v 3 -s 3 -n
+3 -fastpaths -xml MCD.twx MCD.ncd -o MCD.twr MCD.pcf -ucf MCD.ucf
+
+Design file:              MCD.ncd
+Physical constraint file: MCD.pcf
+Device,package,speed:     xc6slx45,csg324,C,-3 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: TS_CLK = PERIOD TIMEGRP "CLK" 10 ns HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 52769 paths analyzed, 1720 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   5.310ns.
+--------------------------------------------------------------------------------
+
+Paths for end point DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd5_2 (SLICE_X19Y27.BX), 450 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     4.690ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               DP/DIV/DP/A[63]_dff_6_3 (FF)
+  Destination:          DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd5_2 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      5.273ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.002ns (0.150 - 0.152)
+  Source Clock:         CLK_BUFGP rising at 0.000ns
+  Destination Clock:    CLK_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: DP/DIV/DP/A[63]_dff_6_3 to DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd5_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y24.CQ      Tcko                  0.391   DP/DIV/DP/A[63]_dff_6<4>
+                                                       DP/DIV/DP/A[63]_dff_6_3
+    SLICE_X16Y26.B4      net (fanout=5)        1.426   DP/DIV/DP/A[63]_dff_6<3>
+    SLICE_X16Y26.COUT    Topcyb                0.375   DP/DIV/DP/Mcompar_eq_AB_cy<3>
+                                                       DP/DIV/DP/Mcompar_eq_AB_lut<1>
+                                                       DP/DIV/DP/Mcompar_eq_AB_cy<3>
+    SLICE_X16Y27.CIN     net (fanout=1)        0.003   DP/DIV/DP/Mcompar_eq_AB_cy<3>
+    SLICE_X16Y27.COUT    Tbyp                  0.076   DP/DIV/DP/Mcompar_eq_AB_cy<7>
+                                                       DP/DIV/DP/Mcompar_eq_AB_cy<7>
+    SLICE_X16Y28.CIN     net (fanout=1)        0.003   DP/DIV/DP/Mcompar_eq_AB_cy<7>
+    SLICE_X16Y28.COUT    Tbyp                  0.076   DP/DIV/DP/Mcompar_eq_AB_cy<11>
+                                                       DP/DIV/DP/Mcompar_eq_AB_cy<11>
+    SLICE_X16Y29.CIN     net (fanout=1)        0.003   DP/DIV/DP/Mcompar_eq_AB_cy<11>
+    SLICE_X16Y29.COUT    Tbyp                  0.076   DP/DIV/DP/Mcompar_eq_AB_cy<15>
+                                                       DP/DIV/DP/Mcompar_eq_AB_cy<15>
+    SLICE_X16Y30.CIN     net (fanout=1)        0.003   DP/DIV/DP/Mcompar_eq_AB_cy<15>
+    SLICE_X16Y30.COUT    Tbyp                  0.076   DP/DIV/DP/Mcompar_eq_AB_cy<19>
+                                                       DP/DIV/DP/Mcompar_eq_AB_cy<19>
+    SLICE_X16Y31.CIN     net (fanout=1)        0.003   DP/DIV/DP/Mcompar_eq_AB_cy<19>
+    SLICE_X16Y31.BMUX    Tcinb                 0.222   DP/DIV/t_eq_AB
+                                                       DP/DIV/DP/Mcompar_eq_AB_cy<21>
+    SLICE_X22Y30.D1      net (fanout=2)        1.226   DP/DIV/t_eq_AB
+    SLICE_X22Y30.D       Tilo                  0.203   DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd5_5
+                                                       DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd5-In1
+    SLICE_X19Y27.BX      net (fanout=7)        1.048   DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd5-In
+    SLICE_X19Y27.CLK     Tdick                 0.063   DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd5_4
+                                                       DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd5_2
+    -------------------------------------------------  ---------------------------
+    Total                                      5.273ns (1.558ns logic, 3.715ns route)
+                                                       (29.5% logic, 70.5% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     4.770ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               DP/DIV/DP/A[63]_dff_6_5 (FF)
+  Destination:          DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd5_2 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      5.188ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.007ns (0.150 - 0.157)
+  Source Clock:         CLK_BUFGP rising at 0.000ns
+  Destination Clock:    CLK_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: DP/DIV/DP/A[63]_dff_6_5 to DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd5_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y26.AQ      Tcko                  0.391   DP/DIV/DP/A[63]_dff_6<11>
+                                                       DP/DIV/DP/A[63]_dff_6_5
+    SLICE_X16Y26.B2      net (fanout=5)        1.341   DP/DIV/DP/A[63]_dff_6<5>
+    SLICE_X16Y26.COUT    Topcyb                0.375   DP/DIV/DP/Mcompar_eq_AB_cy<3>
+                                                       DP/DIV/DP/Mcompar_eq_AB_lut<1>
+                                                       DP/DIV/DP/Mcompar_eq_AB_cy<3>
+    SLICE_X16Y27.CIN     net (fanout=1)        0.003   DP/DIV/DP/Mcompar_eq_AB_cy<3>
+    SLICE_X16Y27.COUT    Tbyp                  0.076   DP/DIV/DP/Mcompar_eq_AB_cy<7>
+                                                       DP/DIV/DP/Mcompar_eq_AB_cy<7>
+    SLICE_X16Y28.CIN     net (fanout=1)        0.003   DP/DIV/DP/Mcompar_eq_AB_cy<7>
+    SLICE_X16Y28.COUT    Tbyp                  0.076   DP/DIV/DP/Mcompar_eq_AB_cy<11>
+                                                       DP/DIV/DP/Mcompar_eq_AB_cy<11>
+    SLICE_X16Y29.CIN     net (fanout=1)        0.003   DP/DIV/DP/Mcompar_eq_AB_cy<11>
+    SLICE_X16Y29.COUT    Tbyp                  0.076   DP/DIV/DP/Mcompar_eq_AB_cy<15>
+                                                       DP/DIV/DP/Mcompar_eq_AB_cy<15>
+    SLICE_X16Y30.CIN     net (fanout=1)        0.003   DP/DIV/DP/Mcompar_eq_AB_cy<15>
+    SLICE_X16Y30.COUT    Tbyp                  0.076   DP/DIV/DP/Mcompar_eq_AB_cy<19>
+                                                       DP/DIV/DP/Mcompar_eq_AB_cy<19>
+    SLICE_X16Y31.CIN     net (fanout=1)        0.003   DP/DIV/DP/Mcompar_eq_AB_cy<19>
+    SLICE_X16Y31.BMUX    Tcinb                 0.222   DP/DIV/t_eq_AB
+                                                       DP/DIV/DP/Mcompar_eq_AB_cy<21>
+    SLICE_X22Y30.D1      net (fanout=2)        1.226   DP/DIV/t_eq_AB
+    SLICE_X22Y30.D       Tilo                  0.203   DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd5_5
+                                                       DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd5-In1
+    SLICE_X19Y27.BX      net (fanout=7)        1.048   DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd5-In
+    SLICE_X19Y27.CLK     Tdick                 0.063   DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd5_4
+                                                       DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd5_2
+    -------------------------------------------------  ---------------------------
+    Total                                      5.188ns (1.558ns logic, 3.630ns route)
+                                                       (30.0% logic, 70.0% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     4.859ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               DP/DIV/DP/A[63]_dff_6_24 (FF)
+  Destination:          DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd5_2 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      5.099ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.007ns (0.240 - 0.247)
+  Source Clock:         CLK_BUFGP rising at 0.000ns
+  Destination Clock:    CLK_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: DP/DIV/DP/A[63]_dff_6_24 to DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd5_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X16Y25.AMUX    Tshcko                0.455   DP/DIV/DP/A[63]_dff_6<29>
+                                                       DP/DIV/DP/A[63]_dff_6_24
+    SLICE_X16Y28.A2      net (fanout=5)        1.326   DP/DIV/DP/A[63]_dff_6<24>
+    SLICE_X16Y28.COUT    Topcya                0.395   DP/DIV/DP/Mcompar_eq_AB_cy<11>
+                                                       DP/DIV/DP/Mcompar_eq_AB_lut<8>
+                                                       DP/DIV/DP/Mcompar_eq_AB_cy<11>
+    SLICE_X16Y29.CIN     net (fanout=1)        0.003   DP/DIV/DP/Mcompar_eq_AB_cy<11>
+    SLICE_X16Y29.COUT    Tbyp                  0.076   DP/DIV/DP/Mcompar_eq_AB_cy<15>
+                                                       DP/DIV/DP/Mcompar_eq_AB_cy<15>
+    SLICE_X16Y30.CIN     net (fanout=1)        0.003   DP/DIV/DP/Mcompar_eq_AB_cy<15>
+    SLICE_X16Y30.COUT    Tbyp                  0.076   DP/DIV/DP/Mcompar_eq_AB_cy<19>
+                                                       DP/DIV/DP/Mcompar_eq_AB_cy<19>
+    SLICE_X16Y31.CIN     net (fanout=1)        0.003   DP/DIV/DP/Mcompar_eq_AB_cy<19>
+    SLICE_X16Y31.BMUX    Tcinb                 0.222   DP/DIV/t_eq_AB
+                                                       DP/DIV/DP/Mcompar_eq_AB_cy<21>
+    SLICE_X22Y30.D1      net (fanout=2)        1.226   DP/DIV/t_eq_AB
+    SLICE_X22Y30.D       Tilo                  0.203   DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd5_5
+                                                       DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd5-In1
+    SLICE_X19Y27.BX      net (fanout=7)        1.048   DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd5-In
+    SLICE_X19Y27.CLK     Tdick                 0.063   DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd5_4
+                                                       DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd5_2
+    -------------------------------------------------  ---------------------------
+    Total                                      5.099ns (1.490ns logic, 3.609ns route)
+                                                       (29.2% logic, 70.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point DP/DIV/DP/A[63]_dff_6_63 (SLICE_X23Y26.C4), 445 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     4.722ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               DP/DIV/DP/A[63]_dff_6_5 (FF)
+  Destination:          DP/DIV/DP/A[63]_dff_6_63 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      5.229ns (Levels of Logic = 16)
+  Clock Path Skew:      -0.014ns (0.238 - 0.252)
+  Source Clock:         CLK_BUFGP rising at 0.000ns
+  Destination Clock:    CLK_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: DP/DIV/DP/A[63]_dff_6_5 to DP/DIV/DP/A[63]_dff_6_63
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y26.AQ      Tcko                  0.391   DP/DIV/DP/A[63]_dff_6<11>
+                                                       DP/DIV/DP/A[63]_dff_6_5
+    SLICE_X18Y21.B2      net (fanout=5)        1.589   DP/DIV/DP/A[63]_dff_6<5>
+    SLICE_X18Y21.COUT    Topcyb                0.380   DP/DIV/DP/Msub_subtractor_out_cy<7>
+                                                       DP/DIV/DP/Msub_subtractor_out_lut<5>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<7>
+    SLICE_X18Y22.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<7>
+    SLICE_X18Y22.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<11>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<11>
+    SLICE_X18Y23.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<11>
+    SLICE_X18Y23.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<15>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<15>
+    SLICE_X18Y24.CIN     net (fanout=1)        0.082   DP/DIV/DP/Msub_subtractor_out_cy<15>
+    SLICE_X18Y24.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<19>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<19>
+    SLICE_X18Y25.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<19>
+    SLICE_X18Y25.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<23>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<23>
+    SLICE_X18Y26.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<23>
+    SLICE_X18Y26.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<27>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<27>
+    SLICE_X18Y27.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<27>
+    SLICE_X18Y27.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<31>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<31>
+    SLICE_X18Y28.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<31>
+    SLICE_X18Y28.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<35>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<35>
+    SLICE_X18Y29.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<35>
+    SLICE_X18Y29.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<39>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<39>
+    SLICE_X18Y30.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<39>
+    SLICE_X18Y30.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<43>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<43>
+    SLICE_X18Y31.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<43>
+    SLICE_X18Y31.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<47>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<47>
+    SLICE_X18Y32.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<47>
+    SLICE_X18Y32.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<51>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<51>
+    SLICE_X18Y33.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<51>
+    SLICE_X18Y33.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<55>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<55>
+    SLICE_X18Y34.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<55>
+    SLICE_X18Y34.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<59>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<59>
+    SLICE_X18Y35.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<59>
+    SLICE_X18Y35.DMUX    Tcind                 0.302   DP/DIV/DP/subtractor_out<63>
+                                                       DP/DIV/DP/Msub_subtractor_out_xor<63>
+    SLICE_X23Y26.C4      net (fanout=2)        1.136   DP/DIV/DP/subtractor_out<63>
+    SLICE_X23Y26.CLK     Tas                   0.322   DP/DIV/DP/A[63]_dff_6<63>
+                                                       DP/DIV/DP/Mmux_A_in601
+                                                       DP/DIV/DP/A[63]_dff_6_63
+    -------------------------------------------------  ---------------------------
+    Total                                      5.229ns (2.383ns logic, 2.846ns route)
+                                                       (45.6% logic, 54.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     4.790ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               DP/DIV/DP/A[63]_dff_6_5 (FF)
+  Destination:          DP/DIV/DP/A[63]_dff_6_63 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      5.161ns (Levels of Logic = 16)
+  Clock Path Skew:      -0.014ns (0.238 - 0.252)
+  Source Clock:         CLK_BUFGP rising at 0.000ns
+  Destination Clock:    CLK_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: DP/DIV/DP/A[63]_dff_6_5 to DP/DIV/DP/A[63]_dff_6_63
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y26.AQ      Tcko                  0.391   DP/DIV/DP/A[63]_dff_6<11>
+                                                       DP/DIV/DP/A[63]_dff_6_5
+    SLICE_X18Y21.B2      net (fanout=5)        1.589   DP/DIV/DP/A[63]_dff_6<5>
+    SLICE_X18Y21.COUT    Topcyb                0.312   DP/DIV/DP/Msub_subtractor_out_cy<7>
+                                                       DP/DIV/DP/Mmux_subtractor_in1561
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<7>
+    SLICE_X18Y22.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<7>
+    SLICE_X18Y22.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<11>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<11>
+    SLICE_X18Y23.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<11>
+    SLICE_X18Y23.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<15>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<15>
+    SLICE_X18Y24.CIN     net (fanout=1)        0.082   DP/DIV/DP/Msub_subtractor_out_cy<15>
+    SLICE_X18Y24.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<19>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<19>
+    SLICE_X18Y25.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<19>
+    SLICE_X18Y25.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<23>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<23>
+    SLICE_X18Y26.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<23>
+    SLICE_X18Y26.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<27>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<27>
+    SLICE_X18Y27.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<27>
+    SLICE_X18Y27.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<31>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<31>
+    SLICE_X18Y28.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<31>
+    SLICE_X18Y28.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<35>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<35>
+    SLICE_X18Y29.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<35>
+    SLICE_X18Y29.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<39>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<39>
+    SLICE_X18Y30.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<39>
+    SLICE_X18Y30.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<43>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<43>
+    SLICE_X18Y31.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<43>
+    SLICE_X18Y31.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<47>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<47>
+    SLICE_X18Y32.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<47>
+    SLICE_X18Y32.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<51>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<51>
+    SLICE_X18Y33.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<51>
+    SLICE_X18Y33.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<55>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<55>
+    SLICE_X18Y34.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<55>
+    SLICE_X18Y34.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<59>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<59>
+    SLICE_X18Y35.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<59>
+    SLICE_X18Y35.DMUX    Tcind                 0.302   DP/DIV/DP/subtractor_out<63>
+                                                       DP/DIV/DP/Msub_subtractor_out_xor<63>
+    SLICE_X23Y26.C4      net (fanout=2)        1.136   DP/DIV/DP/subtractor_out<63>
+    SLICE_X23Y26.CLK     Tas                   0.322   DP/DIV/DP/A[63]_dff_6<63>
+                                                       DP/DIV/DP/Mmux_A_in601
+                                                       DP/DIV/DP/A[63]_dff_6_63
+    -------------------------------------------------  ---------------------------
+    Total                                      5.161ns (2.315ns logic, 2.846ns route)
+                                                       (44.9% logic, 55.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     4.929ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd5_2 (FF)
+  Destination:          DP/DIV/DP/A[63]_dff_6_63 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      5.020ns (Levels of Logic = 16)
+  Clock Path Skew:      -0.016ns (0.238 - 0.254)
+  Source Clock:         CLK_BUFGP rising at 0.000ns
+  Destination Clock:    CLK_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd5_2 to DP/DIV/DP/A[63]_dff_6_63
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y27.BQ      Tcko                  0.391   DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd5_4
+                                                       DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd5_2
+    SLICE_X18Y21.A2      net (fanout=8)        1.374   DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd5_2
+    SLICE_X18Y21.COUT    Topcya                0.386   DP/DIV/DP/Msub_subtractor_out_cy<7>
+                                                       DP/DIV/DP/Mmux_subtractor_in1451
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<7>
+    SLICE_X18Y22.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<7>
+    SLICE_X18Y22.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<11>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<11>
+    SLICE_X18Y23.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<11>
+    SLICE_X18Y23.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<15>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<15>
+    SLICE_X18Y24.CIN     net (fanout=1)        0.082   DP/DIV/DP/Msub_subtractor_out_cy<15>
+    SLICE_X18Y24.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<19>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<19>
+    SLICE_X18Y25.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<19>
+    SLICE_X18Y25.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<23>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<23>
+    SLICE_X18Y26.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<23>
+    SLICE_X18Y26.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<27>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<27>
+    SLICE_X18Y27.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<27>
+    SLICE_X18Y27.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<31>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<31>
+    SLICE_X18Y28.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<31>
+    SLICE_X18Y28.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<35>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<35>
+    SLICE_X18Y29.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<35>
+    SLICE_X18Y29.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<39>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<39>
+    SLICE_X18Y30.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<39>
+    SLICE_X18Y30.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<43>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<43>
+    SLICE_X18Y31.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<43>
+    SLICE_X18Y31.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<47>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<47>
+    SLICE_X18Y32.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<47>
+    SLICE_X18Y32.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<51>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<51>
+    SLICE_X18Y33.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<51>
+    SLICE_X18Y33.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<55>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<55>
+    SLICE_X18Y34.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<55>
+    SLICE_X18Y34.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<59>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<59>
+    SLICE_X18Y35.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<59>
+    SLICE_X18Y35.DMUX    Tcind                 0.302   DP/DIV/DP/subtractor_out<63>
+                                                       DP/DIV/DP/Msub_subtractor_out_xor<63>
+    SLICE_X23Y26.C4      net (fanout=2)        1.136   DP/DIV/DP/subtractor_out<63>
+    SLICE_X23Y26.CLK     Tas                   0.322   DP/DIV/DP/A[63]_dff_6<63>
+                                                       DP/DIV/DP/Mmux_A_in601
+                                                       DP/DIV/DP/A[63]_dff_6_63
+    -------------------------------------------------  ---------------------------
+    Total                                      5.020ns (2.389ns logic, 2.631ns route)
+                                                       (47.6% logic, 52.4% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point DP/DIV/DP/A[63]_dff_6_61 (SLICE_X17Y26.B3), 431 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     4.748ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               DP/DIV/DP/A[63]_dff_6_5 (FF)
+  Destination:          DP/DIV/DP/A[63]_dff_6_61 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      5.201ns (Levels of Logic = 16)
+  Clock Path Skew:      -0.016ns (0.236 - 0.252)
+  Source Clock:         CLK_BUFGP rising at 0.000ns
+  Destination Clock:    CLK_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: DP/DIV/DP/A[63]_dff_6_5 to DP/DIV/DP/A[63]_dff_6_61
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y26.AQ      Tcko                  0.391   DP/DIV/DP/A[63]_dff_6<11>
+                                                       DP/DIV/DP/A[63]_dff_6_5
+    SLICE_X18Y21.B2      net (fanout=5)        1.589   DP/DIV/DP/A[63]_dff_6<5>
+    SLICE_X18Y21.COUT    Topcyb                0.380   DP/DIV/DP/Msub_subtractor_out_cy<7>
+                                                       DP/DIV/DP/Msub_subtractor_out_lut<5>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<7>
+    SLICE_X18Y22.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<7>
+    SLICE_X18Y22.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<11>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<11>
+    SLICE_X18Y23.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<11>
+    SLICE_X18Y23.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<15>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<15>
+    SLICE_X18Y24.CIN     net (fanout=1)        0.082   DP/DIV/DP/Msub_subtractor_out_cy<15>
+    SLICE_X18Y24.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<19>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<19>
+    SLICE_X18Y25.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<19>
+    SLICE_X18Y25.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<23>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<23>
+    SLICE_X18Y26.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<23>
+    SLICE_X18Y26.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<27>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<27>
+    SLICE_X18Y27.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<27>
+    SLICE_X18Y27.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<31>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<31>
+    SLICE_X18Y28.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<31>
+    SLICE_X18Y28.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<35>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<35>
+    SLICE_X18Y29.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<35>
+    SLICE_X18Y29.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<39>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<39>
+    SLICE_X18Y30.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<39>
+    SLICE_X18Y30.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<43>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<43>
+    SLICE_X18Y31.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<43>
+    SLICE_X18Y31.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<47>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<47>
+    SLICE_X18Y32.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<47>
+    SLICE_X18Y32.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<51>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<51>
+    SLICE_X18Y33.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<51>
+    SLICE_X18Y33.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<55>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<55>
+    SLICE_X18Y34.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<55>
+    SLICE_X18Y34.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<59>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<59>
+    SLICE_X18Y35.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<59>
+    SLICE_X18Y35.BMUX    Tcinb                 0.292   DP/DIV/DP/subtractor_out<63>
+                                                       DP/DIV/DP/Msub_subtractor_out_xor<63>
+    SLICE_X17Y26.B3      net (fanout=2)        1.213   DP/DIV/DP/subtractor_out<61>
+    SLICE_X17Y26.CLK     Tas                   0.227   DP/DIV/DP/A[63]_dff_6<15>
+                                                       DP/DIV/DP/Mmux_A_in581
+                                                       DP/DIV/DP/A[63]_dff_6_61
+    -------------------------------------------------  ---------------------------
+    Total                                      5.201ns (2.278ns logic, 2.923ns route)
+                                                       (43.8% logic, 56.2% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     4.816ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               DP/DIV/DP/A[63]_dff_6_5 (FF)
+  Destination:          DP/DIV/DP/A[63]_dff_6_61 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      5.133ns (Levels of Logic = 16)
+  Clock Path Skew:      -0.016ns (0.236 - 0.252)
+  Source Clock:         CLK_BUFGP rising at 0.000ns
+  Destination Clock:    CLK_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: DP/DIV/DP/A[63]_dff_6_5 to DP/DIV/DP/A[63]_dff_6_61
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y26.AQ      Tcko                  0.391   DP/DIV/DP/A[63]_dff_6<11>
+                                                       DP/DIV/DP/A[63]_dff_6_5
+    SLICE_X18Y21.B2      net (fanout=5)        1.589   DP/DIV/DP/A[63]_dff_6<5>
+    SLICE_X18Y21.COUT    Topcyb                0.312   DP/DIV/DP/Msub_subtractor_out_cy<7>
+                                                       DP/DIV/DP/Mmux_subtractor_in1561
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<7>
+    SLICE_X18Y22.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<7>
+    SLICE_X18Y22.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<11>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<11>
+    SLICE_X18Y23.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<11>
+    SLICE_X18Y23.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<15>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<15>
+    SLICE_X18Y24.CIN     net (fanout=1)        0.082   DP/DIV/DP/Msub_subtractor_out_cy<15>
+    SLICE_X18Y24.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<19>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<19>
+    SLICE_X18Y25.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<19>
+    SLICE_X18Y25.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<23>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<23>
+    SLICE_X18Y26.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<23>
+    SLICE_X18Y26.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<27>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<27>
+    SLICE_X18Y27.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<27>
+    SLICE_X18Y27.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<31>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<31>
+    SLICE_X18Y28.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<31>
+    SLICE_X18Y28.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<35>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<35>
+    SLICE_X18Y29.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<35>
+    SLICE_X18Y29.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<39>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<39>
+    SLICE_X18Y30.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<39>
+    SLICE_X18Y30.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<43>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<43>
+    SLICE_X18Y31.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<43>
+    SLICE_X18Y31.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<47>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<47>
+    SLICE_X18Y32.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<47>
+    SLICE_X18Y32.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<51>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<51>
+    SLICE_X18Y33.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<51>
+    SLICE_X18Y33.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<55>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<55>
+    SLICE_X18Y34.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<55>
+    SLICE_X18Y34.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<59>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<59>
+    SLICE_X18Y35.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<59>
+    SLICE_X18Y35.BMUX    Tcinb                 0.292   DP/DIV/DP/subtractor_out<63>
+                                                       DP/DIV/DP/Msub_subtractor_out_xor<63>
+    SLICE_X17Y26.B3      net (fanout=2)        1.213   DP/DIV/DP/subtractor_out<61>
+    SLICE_X17Y26.CLK     Tas                   0.227   DP/DIV/DP/A[63]_dff_6<15>
+                                                       DP/DIV/DP/Mmux_A_in581
+                                                       DP/DIV/DP/A[63]_dff_6_61
+    -------------------------------------------------  ---------------------------
+    Total                                      5.133ns (2.210ns logic, 2.923ns route)
+                                                       (43.1% logic, 56.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     4.955ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd5_2 (FF)
+  Destination:          DP/DIV/DP/A[63]_dff_6_61 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      4.992ns (Levels of Logic = 16)
+  Clock Path Skew:      -0.018ns (0.236 - 0.254)
+  Source Clock:         CLK_BUFGP rising at 0.000ns
+  Destination Clock:    CLK_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd5_2 to DP/DIV/DP/A[63]_dff_6_61
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y27.BQ      Tcko                  0.391   DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd5_4
+                                                       DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd5_2
+    SLICE_X18Y21.A2      net (fanout=8)        1.374   DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd5_2
+    SLICE_X18Y21.COUT    Topcya                0.386   DP/DIV/DP/Msub_subtractor_out_cy<7>
+                                                       DP/DIV/DP/Mmux_subtractor_in1451
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<7>
+    SLICE_X18Y22.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<7>
+    SLICE_X18Y22.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<11>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<11>
+    SLICE_X18Y23.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<11>
+    SLICE_X18Y23.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<15>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<15>
+    SLICE_X18Y24.CIN     net (fanout=1)        0.082   DP/DIV/DP/Msub_subtractor_out_cy<15>
+    SLICE_X18Y24.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<19>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<19>
+    SLICE_X18Y25.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<19>
+    SLICE_X18Y25.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<23>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<23>
+    SLICE_X18Y26.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<23>
+    SLICE_X18Y26.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<27>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<27>
+    SLICE_X18Y27.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<27>
+    SLICE_X18Y27.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<31>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<31>
+    SLICE_X18Y28.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<31>
+    SLICE_X18Y28.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<35>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<35>
+    SLICE_X18Y29.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<35>
+    SLICE_X18Y29.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<39>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<39>
+    SLICE_X18Y30.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<39>
+    SLICE_X18Y30.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<43>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<43>
+    SLICE_X18Y31.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<43>
+    SLICE_X18Y31.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<47>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<47>
+    SLICE_X18Y32.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<47>
+    SLICE_X18Y32.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<51>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<51>
+    SLICE_X18Y33.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<51>
+    SLICE_X18Y33.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<55>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<55>
+    SLICE_X18Y34.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<55>
+    SLICE_X18Y34.COUT    Tbyp                  0.076   DP/DIV/DP/Msub_subtractor_out_cy<59>
+                                                       DP/DIV/DP/Msub_subtractor_out_cy<59>
+    SLICE_X18Y35.CIN     net (fanout=1)        0.003   DP/DIV/DP/Msub_subtractor_out_cy<59>
+    SLICE_X18Y35.BMUX    Tcinb                 0.292   DP/DIV/DP/subtractor_out<63>
+                                                       DP/DIV/DP/Msub_subtractor_out_xor<63>
+    SLICE_X17Y26.B3      net (fanout=2)        1.213   DP/DIV/DP/subtractor_out<61>
+    SLICE_X17Y26.CLK     Tas                   0.227   DP/DIV/DP/A[63]_dff_6<15>
+                                                       DP/DIV/DP/Mmux_A_in581
+                                                       DP/DIV/DP/A[63]_dff_6_61
+    -------------------------------------------------  ---------------------------
+    Total                                      4.992ns (2.284ns logic, 2.708ns route)
+                                                       (45.8% logic, 54.2% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_CLK = PERIOD TIMEGRP "CLK" 10 ns HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd6 (SLICE_X27Y30.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.484ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd2 (FF)
+  Destination:          DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd6 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.487ns (Levels of Logic = 0)
+  Clock Path Skew:      0.003ns (0.043 - 0.040)
+  Source Clock:         CLK_BUFGP rising at 10.000ns
+  Destination Clock:    CLK_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd2 to DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X26Y29.BQ      Tcko                  0.234   DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd4
+                                                       DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd2
+    SLICE_X27Y30.BX      net (fanout=29)       0.194   DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd2
+    SLICE_X27Y30.CLK     Tckdi       (-Th)    -0.059   DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd8
+                                                       DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd6
+    -------------------------------------------------  ---------------------------
+    Total                                      0.487ns (0.293ns logic, 0.194ns route)
+                                                       (60.2% logic, 39.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point CU/nextstate[2]_dff_0_FSM_FFd2 (SLICE_X10Y30.B5), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.511ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               CU/nextstate[2]_dff_0_FSM_FFd2 (FF)
+  Destination:          CU/nextstate[2]_dff_0_FSM_FFd2 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.511ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         CLK_BUFGP rising at 10.000ns
+  Destination Clock:    CLK_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: CU/nextstate[2]_dff_0_FSM_FFd2 to CU/nextstate[2]_dff_0_FSM_FFd2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X10Y30.BQ      Tcko                  0.234   CU/nextstate[2]_dff_0_FSM_FFd3
+                                                       CU/nextstate[2]_dff_0_FSM_FFd2
+    SLICE_X10Y30.B5      net (fanout=7)        0.080   CU/nextstate[2]_dff_0_FSM_FFd2
+    SLICE_X10Y30.CLK     Tah         (-Th)    -0.197   CU/nextstate[2]_dff_0_FSM_FFd3
+                                                       CU/nextstate[2]_dff_0_FSM_FFd2-In1
+                                                       CU/nextstate[2]_dff_0_FSM_FFd2
+    -------------------------------------------------  ---------------------------
+    Total                                      0.511ns (0.431ns logic, 0.080ns route)
+                                                       (84.3% logic, 15.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point DP/DIV/DP/B[63]_dff_8_30 (SLICE_X12Y30.B6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.518ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               DP/DIV/DP/B[63]_dff_8_31 (FF)
+  Destination:          DP/DIV/DP/B[63]_dff_8_30 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.518ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         CLK_BUFGP rising at 10.000ns
+  Destination Clock:    CLK_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: DP/DIV/DP/B[63]_dff_8_31 to DP/DIV/DP/B[63]_dff_8_30
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y30.CQ      Tcko                  0.200   DP/DIV/DP/B[63]_dff_8<32>
+                                                       DP/DIV/DP/B[63]_dff_8_31
+    SLICE_X12Y30.B6      net (fanout=5)        0.128   DP/DIV/DP/B[63]_dff_8<31>
+    SLICE_X12Y30.CLK     Tah         (-Th)    -0.190   DP/DIV/DP/B[63]_dff_8<32>
+                                                       DP/DIV/DP/Mmux_B_in241
+                                                       DP/DIV/DP/B[63]_dff_8_30
+    -------------------------------------------------  ---------------------------
+    Total                                      0.518ns (0.390ns logic, 0.128ns route)
+                                                       (75.3% logic, 24.7% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_CLK = PERIOD TIMEGRP "CLK" 10 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 8.270ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 1.730ns (578.035MHz) (Tbcper_I)
+  Physical resource: CLK_BUFGP/BUFG/I0
+  Logical resource: CLK_BUFGP/BUFG/I0
+  Location pin: BUFGMUX_X3Y13.I0
+  Clock network: CLK_BUFGP/IBUFG
+--------------------------------------------------------------------------------
+Slack: 9.570ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 0.430ns (2325.581MHz) (Tcp)
+  Physical resource: CU/nextstate[2]_dff_0_FSM_FFd4/CLK
+  Logical resource: CU/nextstate[2]_dff_0_FSM_FFd4/CK
+  Location pin: SLICE_X12Y29.CLK
+  Clock network: CLK_BUFGP
+--------------------------------------------------------------------------------
+Slack: 9.570ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 10.000ns
+  High pulse: 5.000ns
+  High pulse limit: 0.215ns (Trpw)
+  Physical resource: CU/nextstate[2]_dff_0_FSM_FFd4/SR
+  Logical resource: CU/nextstate[2]_dff_0_FSM_FFd4/SR
+  Location pin: SLICE_X12Y29.SR
+  Clock network: DP/DIV/CU/rst_n_inv
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock CLK
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLK            |    5.310|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 52769 paths, 0 nets, and 2682 connections
+
+Design statistics:
+   Minimum period:   5.310ns{1}   (Maximum frequency: 188.324MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Tue Jul 19 10:00:43 2022 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 441 MB
+
+
+

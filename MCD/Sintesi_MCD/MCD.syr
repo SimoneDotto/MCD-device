@@ -1,0 +1,622 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.03 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.03 secs
+ 
+--> 
+Reading design: MCD.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "MCD.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "MCD"
+Output Format                      : NGC
+Target Device                      : xc6slx45-3-csg324
+
+---- Source Options
+Top Module Name                    : MCD
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "/home/yes/Desktop/MCD/DIVIDER/DATAPATH_div.vhdl" into library work
+Parsing entity <DATAPATH_div>.
+Parsing architecture <s> of entity <datapath_div>.
+Parsing VHDL file "/home/yes/Desktop/MCD/DIVIDER/CTRLUNIT_div.vhdl" into library work
+Parsing entity <CTRLUNIT_div>.
+Parsing architecture <behav> of entity <ctrlunit_div>.
+Parsing VHDL file "/home/yes/Desktop/MCD/DIVIDER/DIVIDER.vhdl" into library work
+Parsing entity <DIVIDER>.
+Parsing architecture <struct> of entity <divider>.
+Parsing VHDL file "/home/yes/Desktop/MCD/DATAPATH.vhdl" into library work
+Parsing entity <DATAPATH>.
+Parsing architecture <s> of entity <datapath>.
+Parsing VHDL file "/home/yes/Desktop/MCD/CTRLUNIT.vhdl" into library work
+Parsing entity <CTRLUNIT>.
+Parsing architecture <behav> of entity <ctrlunit>.
+Parsing VHDL file "/home/yes/Desktop/MCD/MCD.vhdl" into library work
+Parsing entity <MCD>.
+Parsing architecture <struct> of entity <mcd>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <MCD> (architecture <struct>) with generics from library <work>.
+
+Elaborating entity <CTRLUNIT> (architecture <behav>) from library <work>.
+INFO:HDLCompiler:679 - "/home/yes/Desktop/MCD/CTRLUNIT.vhdl" Line 76. Case statement is complete. others clause is never selected
+
+Elaborating entity <DATAPATH> (architecture <s>) with generics from library <work>.
+WARNING:HDLCompiler:871 - "/home/yes/Desktop/MCD/DATAPATH.vhdl" Line 61: Using initial value "00000000000000000000000000000000" for allzeros since it is never assigned
+
+Elaborating entity <DIVIDER> (architecture <struct>) with generics from library <work>.
+
+Elaborating entity <CTRLUNIT_div> (architecture <behav>) from library <work>.
+INFO:HDLCompiler:679 - "/home/yes/Desktop/MCD/DIVIDER/CTRLUNIT_div.vhdl" Line 91. Case statement is complete. others clause is never selected
+
+Elaborating entity <DATAPATH_div> (architecture <s>) with generics from library <work>.
+WARNING:HDLCompiler:871 - "/home/yes/Desktop/MCD/DIVIDER/DATAPATH_div.vhdl" Line 54: Using initial value "0000000000000000000000000000000000000000000000000000000000000000" for allzeros since it is never assigned
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <MCD>.
+    Related source file is "/home/yes/Desktop/MCD/MCD.vhdl".
+        LEN = 32
+    Summary:
+	no macro.
+Unit <MCD> synthesized.
+
+Synthesizing Unit <CTRLUNIT>.
+    Related source file is "/home/yes/Desktop/MCD/CTRLUNIT.vhdl".
+    Found 3-bit register for signal <state>.
+    Found finite state machine <FSM_0> for signal <nextstate[2]_dff_0>.
+    -----------------------------------------------------------------------
+    | States             | 6                                              |
+    | Transitions        | 10                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 7                                              |
+    | Clock              | CLK (rising_edge)                              |
+    | Reset              | rst_n (negative)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | init                                           |
+    | Power Up State     | init                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred   1 Finite State Machine(s).
+Unit <CTRLUNIT> synthesized.
+
+Synthesizing Unit <DATAPATH>.
+    Related source file is "/home/yes/Desktop/MCD/DATAPATH.vhdl".
+        LEN = 32
+INFO:Xst:3210 - "/home/yes/Desktop/MCD/DATAPATH.vhdl" line 66: Output port <RESULT_divider> of the instance <DIV> is unconnected or connected to loadless signal.
+    Found 32-bit register for signal <B>.
+    Found 32-bit register for signal <R>.
+    Found 32-bit register for signal <A>.
+    Found 32-bit 3-to-1 multiplexer for signal <B_in> created at line 94.
+    Found 32-bit comparator greater for signal <maj_AB> created at line 101
+    Found 32-bit comparator greater for signal <maj_R> created at line 102
+    Summary:
+	inferred  96 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   2 Multiplexer(s).
+Unit <DATAPATH> synthesized.
+
+Synthesizing Unit <DIVIDER>.
+    Related source file is "/home/yes/Desktop/MCD/DIVIDER/DIVIDER.vhdl".
+        LEN = 32
+    Summary:
+	no macro.
+Unit <DIVIDER> synthesized.
+
+Synthesizing Unit <CTRLUNIT_div>.
+    Related source file is "/home/yes/Desktop/MCD/DIVIDER/CTRLUNIT_div.vhdl".
+    Found 4-bit register for signal <state>.
+    Found finite state machine <FSM_1> for signal <nextstate[3]_dff_0>.
+    -----------------------------------------------------------------------
+    | States             | 9                                              |
+    | Transitions        | 15                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 16                                             |
+    | Clock              | CLK (rising_edge)                              |
+    | Reset              | rst_n (negative)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | s0                                             |
+    | Power Up State     | s0                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred   2 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <CTRLUNIT_div> synthesized.
+
+Synthesizing Unit <DATAPATH_div>.
+    Related source file is "/home/yes/Desktop/MCD/DIVIDER/DATAPATH_div.vhdl".
+        LEN = 32
+    Found 64-bit register for signal <B>.
+    Found 64-bit register for signal <CNT>.
+    Found 64-bit register for signal <RES>.
+    Found 64-bit register for signal <A>.
+    Found 64-bit adder for signal <adder_out> created at line 115.
+    Found 64-bit subtractor for signal <subtractor_out> created at line 49.
+    Found 64-bit 3-to-1 multiplexer for signal <B_in> created at line 83.
+    Found 64-bit 3-to-1 multiplexer for signal <CNT_in> created at line 88.
+    Found 64-bit 3-to-1 multiplexer for signal <RES_in> created at line 93.
+    Found 64-bit comparator greater for signal <maj_CNT> created at line 123
+    Found 64-bit comparator greater for signal <maj_AB> created at line 124
+    Found 64-bit comparator equal for signal <eq_AB> created at line 126
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred 256 D-type flip-flop(s).
+	inferred   3 Comparator(s).
+	inferred   7 Multiplexer(s).
+Unit <DATAPATH_div> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 64-bit adder                                          : 1
+ 64-bit subtractor                                     : 1
+# Registers                                            : 7
+ 32-bit register                                       : 3
+ 64-bit register                                       : 4
+# Comparators                                          : 5
+ 32-bit comparator greater                             : 2
+ 64-bit comparator equal                               : 1
+ 64-bit comparator greater                             : 2
+# Multiplexers                                         : 11
+ 2-bit 2-to-1 multiplexer                              : 2
+ 32-bit 2-to-1 multiplexer                             : 1
+ 32-bit 3-to-1 multiplexer                             : 1
+ 64-bit 2-to-1 multiplexer                             : 4
+ 64-bit 3-to-1 multiplexer                             : 3
+# FSMs                                                 : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 64-bit adder                                          : 1
+ 64-bit subtractor                                     : 1
+# Registers                                            : 352
+ Flip-Flops                                            : 352
+# Comparators                                          : 5
+ 32-bit comparator greater                             : 2
+ 64-bit comparator equal                               : 1
+ 64-bit comparator greater                             : 2
+# Multiplexers                                         : 105
+ 1-bit 2-to-1 multiplexer                              : 64
+ 1-bit 3-to-1 multiplexer                              : 32
+ 2-bit 2-to-1 multiplexer                              : 2
+ 32-bit 2-to-1 multiplexer                             : 1
+ 64-bit 2-to-1 multiplexer                             : 3
+ 64-bit 3-to-1 multiplexer                             : 3
+# FSMs                                                 : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <FSM_0> on signal <nextstate[2]_dff_0[1:6]> with one-hot encoding.
+---------------------
+ State   | Encoding
+---------------------
+ init    | 000001
+ compare | 000010
+ swap    | 000100
+ div     | 001000
+ result  | 010000
+ test    | 100000
+---------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <DP/DIV/CU/FSM_1> on signal <nextstate[3]_dff_0[1:9]> with one-hot encoding.
+----------------------
+ State   | Encoding
+----------------------
+ s0      | 000000001
+ s1      | 000000010
+ s2      | 010000000
+ s3      | 100000000
+ s4      | 000100000
+ s5      | 000010000
+ s1_wait | 000000100
+ s2_wait | 000001000
+ s5_wait | 001000000
+----------------------
+
+Optimizing unit <MCD> ...
+
+Optimizing unit <DATAPATH> ...
+
+Optimizing unit <DATAPATH_div> ...
+
+Optimizing unit <CTRLUNIT_div> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block MCD, actual ratio is 3.
+FlipFlop CU/nextstate[2]_dff_0_FSM_FFd1 has been replicated 1 time(s)
+FlipFlop CU/nextstate[2]_dff_0_FSM_FFd4 has been replicated 1 time(s)
+FlipFlop CU/nextstate[2]_dff_0_FSM_FFd6 has been replicated 1 time(s)
+FlipFlop DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd1 has been replicated 2 time(s)
+FlipFlop DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd2 has been replicated 4 time(s)
+FlipFlop DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd4 has been replicated 2 time(s)
+FlipFlop DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd5 has been replicated 7 time(s)
+FlipFlop DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd8 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 386
+ Flip-Flops                                            : 386
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : MCD.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 1076
+#      GND                         : 1
+#      INV                         : 1
+#      LUT1                        : 1
+#      LUT2                        : 40
+#      LUT3                        : 167
+#      LUT4                        : 294
+#      LUT5                        : 115
+#      LUT6                        : 88
+#      MUXCY                       : 240
+#      VCC                         : 1
+#      XORCY                       : 128
+# FlipFlops/Latches                : 386
+#      FDC                         : 31
+#      FDCE                        : 352
+#      FDP                         : 3
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 99
+#      IBUF                        : 66
+#      OBUF                        : 33
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx45csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             386  out of  54576     0%  
+ Number of Slice LUTs:                  706  out of  27288     2%  
+    Number used as Logic:               706  out of  27288     2%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    756
+   Number with an unused Flip Flop:     370  out of    756    48%  
+   Number with an unused LUT:            50  out of    756     6%  
+   Number of fully used LUT-FF pairs:   336  out of    756    44%  
+   Number of unique control sets:         7
+
+IO Utilization: 
+ Number of IOs:                         100
+ Number of bonded IOBs:                 100  out of    218    45%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+CLK                                | BUFGP                  | 386   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 4.130ns (Maximum Frequency: 242.116MHz)
+   Minimum input arrival time before clock: 4.515ns
+   Maximum output required time after clock: 4.352ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'CLK'
+  Clock period: 4.130ns (frequency: 242.116MHz)
+  Total number of paths / destination ports: 52769 / 738
+-------------------------------------------------------------------------
+Delay:               4.130ns (Levels of Logic = 64)
+  Source:            DP/DIV/DP/CNT[63]_dff_10_0 (FF)
+  Destination:       DP/DIV/DP/CNT[63]_dff_10_61 (FF)
+  Source Clock:      CLK rising
+  Destination Clock: CLK rising
+
+  Data Path: DP/DIV/DP/CNT[63]_dff_10_0 to DP/DIV/DP/CNT[63]_dff_10_61
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             5   0.447   0.962  DP/DIV/DP/CNT[63]_dff_10_0 (DP/DIV/DP/CNT[63]_dff_10_0)
+     LUT4:I0->O            1   0.203   0.000  DP/DIV/DP/Msub_subtractor_out_lut<0> (DP/DIV/DP/Msub_subtractor_out_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  DP/DIV/DP/Msub_subtractor_out_cy<0> (DP/DIV/DP/Msub_subtractor_out_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<1> (DP/DIV/DP/Msub_subtractor_out_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<2> (DP/DIV/DP/Msub_subtractor_out_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<3> (DP/DIV/DP/Msub_subtractor_out_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<4> (DP/DIV/DP/Msub_subtractor_out_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<5> (DP/DIV/DP/Msub_subtractor_out_cy<5>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<6> (DP/DIV/DP/Msub_subtractor_out_cy<6>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<7> (DP/DIV/DP/Msub_subtractor_out_cy<7>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<8> (DP/DIV/DP/Msub_subtractor_out_cy<8>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<9> (DP/DIV/DP/Msub_subtractor_out_cy<9>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<10> (DP/DIV/DP/Msub_subtractor_out_cy<10>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<11> (DP/DIV/DP/Msub_subtractor_out_cy<11>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<12> (DP/DIV/DP/Msub_subtractor_out_cy<12>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<13> (DP/DIV/DP/Msub_subtractor_out_cy<13>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<14> (DP/DIV/DP/Msub_subtractor_out_cy<14>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<15> (DP/DIV/DP/Msub_subtractor_out_cy<15>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<16> (DP/DIV/DP/Msub_subtractor_out_cy<16>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<17> (DP/DIV/DP/Msub_subtractor_out_cy<17>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<18> (DP/DIV/DP/Msub_subtractor_out_cy<18>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<19> (DP/DIV/DP/Msub_subtractor_out_cy<19>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<20> (DP/DIV/DP/Msub_subtractor_out_cy<20>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<21> (DP/DIV/DP/Msub_subtractor_out_cy<21>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<22> (DP/DIV/DP/Msub_subtractor_out_cy<22>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<23> (DP/DIV/DP/Msub_subtractor_out_cy<23>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<24> (DP/DIV/DP/Msub_subtractor_out_cy<24>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<25> (DP/DIV/DP/Msub_subtractor_out_cy<25>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<26> (DP/DIV/DP/Msub_subtractor_out_cy<26>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<27> (DP/DIV/DP/Msub_subtractor_out_cy<27>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<28> (DP/DIV/DP/Msub_subtractor_out_cy<28>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<29> (DP/DIV/DP/Msub_subtractor_out_cy<29>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<30> (DP/DIV/DP/Msub_subtractor_out_cy<30>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<31> (DP/DIV/DP/Msub_subtractor_out_cy<31>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<32> (DP/DIV/DP/Msub_subtractor_out_cy<32>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<33> (DP/DIV/DP/Msub_subtractor_out_cy<33>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<34> (DP/DIV/DP/Msub_subtractor_out_cy<34>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<35> (DP/DIV/DP/Msub_subtractor_out_cy<35>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<36> (DP/DIV/DP/Msub_subtractor_out_cy<36>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<37> (DP/DIV/DP/Msub_subtractor_out_cy<37>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<38> (DP/DIV/DP/Msub_subtractor_out_cy<38>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<39> (DP/DIV/DP/Msub_subtractor_out_cy<39>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<40> (DP/DIV/DP/Msub_subtractor_out_cy<40>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<41> (DP/DIV/DP/Msub_subtractor_out_cy<41>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<42> (DP/DIV/DP/Msub_subtractor_out_cy<42>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<43> (DP/DIV/DP/Msub_subtractor_out_cy<43>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<44> (DP/DIV/DP/Msub_subtractor_out_cy<44>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<45> (DP/DIV/DP/Msub_subtractor_out_cy<45>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<46> (DP/DIV/DP/Msub_subtractor_out_cy<46>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<47> (DP/DIV/DP/Msub_subtractor_out_cy<47>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<48> (DP/DIV/DP/Msub_subtractor_out_cy<48>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<49> (DP/DIV/DP/Msub_subtractor_out_cy<49>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<50> (DP/DIV/DP/Msub_subtractor_out_cy<50>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<51> (DP/DIV/DP/Msub_subtractor_out_cy<51>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<52> (DP/DIV/DP/Msub_subtractor_out_cy<52>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<53> (DP/DIV/DP/Msub_subtractor_out_cy<53>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<54> (DP/DIV/DP/Msub_subtractor_out_cy<54>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<55> (DP/DIV/DP/Msub_subtractor_out_cy<55>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<56> (DP/DIV/DP/Msub_subtractor_out_cy<56>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<57> (DP/DIV/DP/Msub_subtractor_out_cy<57>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<58> (DP/DIV/DP/Msub_subtractor_out_cy<58>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<59> (DP/DIV/DP/Msub_subtractor_out_cy<59>)
+     MUXCY:CI->O           1   0.019   0.000  DP/DIV/DP/Msub_subtractor_out_cy<60> (DP/DIV/DP/Msub_subtractor_out_cy<60>)
+     XORCY:CI->O           2   0.180   0.721  DP/DIV/DP/Msub_subtractor_out_xor<61> (DP/DIV/DP/subtractor_out<61>)
+     LUT4:I2->O            1   0.203   0.000  DP/DIV/DP/Mmux_CNT_in581 (DP/DIV/DP/CNT_in<61>)
+     FDCE:D                    0.102          DP/DIV/DP/CNT[63]_dff_10_61
+    ----------------------------------------
+    Total                      4.130ns (2.447ns logic, 1.683ns route)
+                                       (59.2% logic, 40.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK'
+  Total number of paths / destination ports: 453 / 453
+-------------------------------------------------------------------------
+Offset:              4.515ns (Levels of Logic = 2)
+  Source:            rst_n (PAD)
+  Destination:       CU/nextstate[2]_dff_0_FSM_FFd6 (FF)
+  Destination Clock: CLK rising
+
+  Data Path: rst_n to CU/nextstate[2]_dff_0_FSM_FFd6
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.222   0.579  rst_n_IBUF (rst_n_IBUF)
+     INV:I->O            386   0.206   2.078  rst_n_inv1_INV_0 (DP/DIV/CU/rst_n_inv)
+     FDP:PRE                   0.430          DP/DIV/CU/nextstate[3]_dff_0_FSM_FFd9
+    ----------------------------------------
+    Total                      4.515ns (1.858ns logic, 2.657ns route)
+                                       (41.2% logic, 58.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK'
+  Total number of paths / destination ports: 33 / 33
+-------------------------------------------------------------------------
+Offset:              4.352ns (Levels of Logic = 1)
+  Source:            CU/nextstate[2]_dff_0_FSM_FFd6 (FF)
+  Destination:       READY (PAD)
+  Source Clock:      CLK rising
+
+  Data Path: CU/nextstate[2]_dff_0_FSM_FFd6 to READY
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDP:C->Q             35   0.447   1.334  CU/nextstate[2]_dff_0_FSM_FFd6 (CU/nextstate[2]_dff_0_FSM_FFd6)
+     OBUF:I->O                 2.571          READY_OBUF (READY)
+    ----------------------------------------
+    Total                      4.352ns (3.018ns logic, 1.334ns route)
+                                       (69.4% logic, 30.6% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock CLK
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLK            |    4.130|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 4.72 secs
+ 
+--> 
+
+
+Total memory usage is 380368 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    2 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+
