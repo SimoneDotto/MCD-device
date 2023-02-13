@@ -16,6 +16,6 @@ For the design of a device that can be synthesized on a target circuit, we adopt
 # Interfaces
 The following photos represent the general scheme of the hierarchical design that we have adopted in which the subdevice is the DIVIDER while the main device is the MCD (both synthesizable):
 
-![Hierarchical Structure](immagini/progettazione gerarchica.png)
+![Hierarchical Structure](immagini/hierarchical.png)
 ![MCD Interface](immagini/mcd.png)
 ![Divider Interface](immagini/divider.png)
