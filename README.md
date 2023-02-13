@@ -12,3 +12,5 @@ For the design of a device that can be synthesized on a target circuit, we adopt
 4. Deduction of the Datapath
 5. Completion of the Toplevel
 6. Completion of the Testbench
+
+![Uploading image.png…]()
