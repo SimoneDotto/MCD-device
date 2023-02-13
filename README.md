@@ -3,7 +3,7 @@ In this project, we will present the design and simulation of a synchronous devi
 
 **Note**: We have assumed that the calculation of the greatest common divisor between two values, one of which or both of which are zero, is never required, so the problem of division by zero is also avoided. As a result, we have not concerned ourselves with dealing with these particular cases in the analysis of algorithms.
 
-# Design
+# Design flow
 For the design of a device that can be synthesized on a target circuit, we adopted the following workflow:
 
 1. High-level algorithm design and simulation in C
@@ -13,9 +13,9 @@ For the design of a device that can be synthesized on a target circuit, we adopt
 5. Completion of the Toplevel
 6. Completion of the Testbench
 
-
+# Interfaces
 The following photos represent the general scheme of the hierarchical design that we have adopted in which the subdevice is the DIVIDER while the main device is the MCD (both synthesizable):
 
-![Hierarchical Structure](immagini/progettazione_gerarchica.png)
+![Hierarchical Structure](immagini/progettazione gerarchica.png)
 ![MCD Interface](immagini/mcd.png)
 ![Divider Interface](immagini/divider.png)
